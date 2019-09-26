@@ -6,7 +6,7 @@ Sample usage for [logrus](https://github.com/sirupsen/logrus)
 ```go
 log.SetFormatter(&log.JSONFormatter{})
 
-fwriter = fluentwriter.NewFluentWriter(fluentHost, fluentPort, fluentTag, 4 * time.Second, 1024)
+fwriter = fluentwriter.NewFluentWriter("localhost", 8888, "my.tag", 4 * time.Second, 1024)
 log.SetOutput(io.MultiWriter(os.Stdout, fwriter))
 
 ```
